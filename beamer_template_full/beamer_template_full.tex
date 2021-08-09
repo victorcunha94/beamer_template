@@ -1,0 +1,642 @@
+
+\documentclass[11pt, hide notes, aspectratio=169]{beamer} % Font sizes: 8, 9, 10, 11, 12, 14, 17, 20. Some sizes require "extsizes" package to be installed.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{beamerthemeshadow}
+\usepackage{graphicx} % Enable the use of graphs
+\usepackage{amsfonts} % Enable special mathemtical characters.
+\usepackage{amsmath}  % Enable the use  Multi-line equations, compound symbols, etc
+\usepackage{extsizes} % Enable the use of different font sizes.
+\usepackage{booktabs} % More complex tables
+\usepackage{hyperref} % Links
+\usepackage{subfig}   % Subfigures
+\usepackage{helvet}   % Different fonts
+% Need also to download pgf, ms and xcolor packages.
+\usepackage[ansinew]{inputenc} % Permite digitar os acentos diretamente.
+\usepackage[portuguese]{babel} % Habilita a língua portuguesa
+
+\usetheme{default} % Options: default, Antibes, Berkeley, Berlin, Copenhagen, Madrid, Pittsburgh, Singapore, etc.
+%\useinnertheme{default} % Options: default, circles, rectangles, rounded, inmargin,
+%\useoutertheme{default} % Options: default, infolines, miniframes, etc. Options []: footline=empty, footline=authorinstitute, footline=authortitle, footline=institutetitle, footline=authorinstitutetitle, subsection=.true or false.
+
+%\usecolortheme{default} % Options: default, beetle, albatross, crane, fly, wolverine, beaver, whale, etc.
+%\useinnertheme{orchid} % Inner Color Themes: lily, orchid, rose
+%\useoutertheme{dolphin} % Outer Color Themes: whale, seahorse, dolphin
+
+\setbeamersize{text margin left=0.6cm, text margin right=0.6cm}
+
+\setbeameroption{hide notes} % Use this option instead in presentations with projectors: show notes on second screen
+% to add notes, type: \note[item]<1>{Text}
+
+\begin{document}
+
+\title[Um tutorial de Beamer usando Beamer \hspace{1cm}\insertframenumber/\
+21]{Um tutorial de Beamer usando Beamer}
+\subtitle[Uma Introdução Rápida]{Uma Introdução Rápida}
+\author{André Loureiro}
+\institute{Departmento de Economia - University of Edinburgh}
+\date{Julho 2011}
+
+\setbeamercovered{dynamic}
+
+
+\beamertemplatenavigationsymbolsempty
+
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+\frametitle{Resumo}
+\tableofcontents[pausesections] % Use option part=* to specify each part if you want to include a reminder of the outline before each section.
+\end{frame}
+
+
+\section{O que é Beamer e por que usá-lo?}
+
+
+\begin{frame}[label=myslide01] % [<options>=label, plain, (c=center,t=top,b=bottom)]
+
+\frametitle{O que é Beamer?} {\ % <= Be careful with this!
+\begin{itemize}
+    \item Beamer é uma classe de documento em \LaTeX{} que produz apresentações acadêmicas limpas, organizadas e padronizadas.
+             \pause \item A maioria dos editores de \LaTeX{} necessita a instalação do pacote \emph{beamer}, que pode ser facilmente obtido da internet.
+\end{itemize}
+
+}  % <= Be careful with this!
+\end{frame}
+
+\begin{frame}[label=myslide02] % [<options>=label, plain, (c=center,t=top,b=bottom)]
+
+\frametitle{Por que usá-lo?} {\ % <= Be careful with this!
+\begin{itemize}
+\item A maioria dos artigos acadêmicos em áreas que usam matemática em algum grau usam Beamer.
+    \pause \item Muito conveniente, pois utiliza o mesmo código do seu artigo em \LaTeX{}.
+    \pause \item Como todo documento em \LaTeX{}, permite controle global \textcolor[rgb]{1.00,0.00,0.00}{e} local de \emph{layout}, cor e fontes. Não importa se você pula uma linha ou pressiona a tecla de espaço mais de uma vez por acidente, nada muda no documento final.
+         \pause \item O resultado final é um arquivo em PDF bastante portátil que se mantém inalterado em diferentes configurações e sistemas operacionais.
+\end{itemize}
+
+}  % <= Be careful with this!
+\end{frame}
+
+
+\section{Use Beamer em 4 passos}
+
+\begin{frame}[label=usebeamer]
+\frametitle{Use Beamer em 4 passos} {\
+\transdissolve %For more options, see Beamer User Guide.
+\vskip-0.35cm
+\begin{enumerate}
+  \item Instale um editor de \LaTeX{}.
+  \item Instale Mik\TeX{}: Provê um conjunto de ferramentas necessárias para prepare documentos usando a linguagem \TeX{}/\LaTeX{}. (Este software automaticamente se acopla ao editor de \LaTeX{})
+  \item Use Mik\TeX{} para fazer o download e instalação do pacote \emph{beamer}. (Se a versão do Mik\TeX{} for mais recente, quando o comando ``usepackage" for utilizado pela primeira vez, o pacote é automaticamente baixado e instalado.)
+  \item Use o arquivo .tex da presente apresentação como modelo e siga os passos a seguir. (Use ``Um Tutorial de Latex usando Latex" como guia auxiliar.)
+\end{enumerate}
+
+}
+\end{frame}
+
+\section{Estrutura Básica}
+
+\begin{frame}[label=basic, plain, fragile]\footnotesize
+\frametitle{Estrutura Básica de arquivo .tex para Beamer} {\
+
+\begin{itemize}
+\item Este é um exemplo da estrutura de um arquivo .tex para uma apresentação em Beamer. (Arquivo ema anexo: beamer\_simples.tex) Se digitar esse conjunto de comandos em um editor de \LaTeX{} e compilar (geralmente o comando ou botão é PDFLaTeX)...
+\end{itemize}
+
+% Eu deveria ter usado o comando verbatim aqui, mas por algum motivo, o comando de iniciar slide estava sendo executado mesmo assim.
+
+\textbackslash{}documentclass\{beamer\}
+\vskip0.2cm
+\textbackslash{}begin\{document\}
+
+\textbackslash{}title\{O Efeito da Renda sobre o Consumo\}
+
+\textbackslash{}author\{A. U. Tor\}
+
+\textbackslash{}date\{Julho 2011\}
+\vskip0.2cm
+\textbackslash{}begin\{frame\}
+
+\textbackslash{}titlepage  
+
+\textbackslash{}end\{frame\}
+\vskip0.2cm
+\textbackslash{}begin\{frame\}[label=meuslide1]
+
+\textbackslash{}frametitle\{Meu slide\} \{\textbackslash{}
+\vskip0.2cm
+Meu slide aqui.
+\vskip0.2cm
+\}
+
+\textbackslash{}end\{frame\}
+\vskip0.2cm
+\textbackslash{}end\{document\}
+
+
+}
+\end{frame}
+
+\begin{frame}[label=basic2, plain, fragile]\footnotesize
+\frametitle{Estrutura Básica de arquivo .tex para Beamer} {\
+\vskip-0.3cm
+\begin{itemize}
+\item ... você terá dois slides. O primeiro seria assim:
+\end{itemize}
+
+\vskip-0.1cm
+
+\begin{figure}
+\centering
+  \includegraphics[width=10cm]{cimg0548.jpg}\\
+\end{figure}
+
+
+}
+\end{frame}
+
+\begin{frame}[label=basic2, plain, fragile]\footnotesize
+\frametitle{Estrutura Básica de arquivo .tex para Beamer} {\
+\vskip-0.3cm
+\begin{itemize}
+\item  E o segundo seria assim:
+\end{itemize}
+
+\vskip-0.1cm
+
+\begin{figure}
+\centering
+  \includegraphics[width=10cm]{cimg0557.jpg}\\
+\end{figure}
+
+
+}
+\end{frame}
+
+\begin{frame}[label=basic3, plain, fragile]
+\frametitle{Estrutura Básica de arquivo .tex para Beamer} {\
+
+\begin{itemize}
+\item Depois tente fazer o mesmo com o arquivo em anexo beamer\_simples2.tex
+\item O próximo passo é usar o arquivo .tex correspondente desta aprsentação como modelo.
+\item Antes disso, pode ser interesante entender melhor os principais objetos usados numa apresentação em Beamer.
+\end{itemize}
+
+}
+\end{frame}
+
+\section{Objetos}
+
+\subsection{Equações}
+
+\begin{frame}[label=myslide02]\footnotesize
+\frametitle{Equações} {\
+
+
+\begin{itemize}
+    \item Como em qualquer documento em \LaTeX{}, é muito fácil escrever equações:
+\end{itemize}
+
+\begin{equation}\label{eq:demand}
+    Q =\alpha+\beta P+ \gamma I+\epsilon
+\end{equation}
+
+\begin{equation}\label{eq:sum}
+   1 + 2 + \cdots + n = \frac{n(n + 1)}{2}
+\end{equation}
+
+}
+\end{frame}
+
+\begin{frame}[label=myslide02b, fragile]\footnotesize
+\frametitle{Equações} {\
+
+\vskip-0.3cm
+
+\begin{itemize}
+    \item As equações anteriores aparecerão se digitar:
+\end{itemize}
+
+\begin{verbatim}
+\begin{equation}
+    Q =\alpha+\beta P+ \gamma I+\epsilon
+\end{equation}
+
+\begin{equation}
+   1 + 2 + \cdots + n = \frac{n(n + 1)}{2}
+\end{equation}
+\end{verbatim}
+
+\begin{itemize}
+    \item Não se assuste com a quantidade de códigos. A maioria dos editores de \LaTeX{} tem botões que ao serem clicados escrevem o código da letra grega ou notação matemática que precisa.
+    \item Um recurso bastante útil para equções mais complicadas, mas frequentemente utilizadas é a \textcolor[rgb]{0.00,0.50,1.00}{\emph{Wikipedia}}. Ela tem todas a maioria das equações escritas em código de \LaTeX{}. Apenas procure pela fonte geradora da página correpondente.
+\end{itemize}
+
+}
+\end{frame}
+
+\subsection{Gráficos}
+
+\begin{frame}[label=graphs]
+\frametitle{Gráficos} {\
+
+\vskip-0.3cm
+
+Um gráfico vale mais do que 1000 palavras.
+
+% Compatible files: pdf, png, jpg, etc
+\begin{figure}
+  % Requires \usepackage{graphicx}
+  \includegraphics[width=4cm]{market.jpg}\\
+  \caption{Oferta X Demanda}
+\end{figure}
+
+}
+\end{frame}
+
+\begin{frame}[label=graphs2, fragile]\footnotesize
+\frametitle{Gráficos} {\
+
+\vskip-0.48cm
+
+Código correspondente:
+
+
+\begin{verbatim}
+\begin{figure}
+  \includegraphics[width=4cm]{market.jpg}\\
+  \caption{Oferta X Demanda}
+\end{figure}
+\end{verbatim}
+
+\begin{itemize}
+    \item Sua figura/gráfico (neste caso: market.jpg) deve estar na mesma pasta. (Também é possível difitar o caminho para outra pasta)
+    \item Tipo de arquivos compatíveis : pdf, png, jpg etc
+    \item Mais uma vez, a maioria dos editores de \LaTeX{} possui botões de atalho para isto também. Clique no botão de atalho para que o software digite o código para você.
+\end{itemize}
+
+}
+\end{frame}
+
+
+\begin{frame}[label=graphs3]
+\frametitle{Gráficos} {\
+
+Gráficos múltiplos:
+
+\begin{figure}
+\centering
+\caption{Dois Mercados}\label{fig:markets2}
+\vskip-0.6cm
+\subfloat[Mercado 1]{\label{fig:market1}\includegraphics[height=3.5cm]{market.jpg}}
+\subfloat[Mercado 2]{\label{fig:market2}\includegraphics[height=3.5cm]{market2.jpg}}
+\end{figure}
+
+\vskip-0.65cm
+\begin{flushright}
+\hyperlink{links}{\beamerreturnbutton{Links}}
+\end{flushright}
+
+}
+\end{frame}
+
+
+\subsection{Tabelas}
+
+\begin{frame}[label=table]
+\frametitle{Tabelas} {\
+
+\vskip-0.65cm
+
+\begin{table}\footnotesize
+\begin{center}
+\caption{Estimação da Função Demanda} \label{tab:demand}
+\begin{tabular}{lccc}
+\toprule
+& (1) & (2) & (3)\\
+ & Demand & Demand  & Demand\\
+  &  & & (Domestic)\\
+\hline
+ &  & & \\
+Constant & 0.87** & 0.71** & 0.91*** \\
+                & (0.41) & (0.27) & (0.00)\\
+Price & -0.87*** & -0.71*** & -0.60*** \\
+ & (0.21) & (0.17) & (0.00)\\
+Income & & 8.11*** & 9.34***\\
+ &  & (2.20) & (0.00)\\
+ &  & & \\
+\midrule
+Observations & 5435 & 5435 & 2319\\
+$R^{2}$ & 0.90 & 0.92 & 0.91\\
+\bottomrule
+\multicolumn{4}{l}{ *** p$<$0.01, ** p$<$0.05, * p$<$0.1} \\
+\end{tabular}
+\end{center}
+\end{table}
+
+}
+\end{frame}
+
+
+\subsection{Links}
+
+\begin{frame}[label=links]
+\frametitle{Links} {\
+\vskip-0.5cm
+Algumas vezes é necessário voltar para um slide no começo da apresentação para explicar algo.
+\vskip-0.35cm
+\begin{figure}
+  % Requires \usepackage{graphicx}
+  \includegraphics[width=3cm]{market2.jpg}\\
+  \caption{Supply X Demand}\label{fig:market2}
+\end{figure}
+\vskip-0.5cm
+Clique no botão ao lado para saltar para o slide 14.
+\vskip-1.2cm
+\begin{flushright}
+\hyperlink{graphs3}{\beamerreturnbutton{Gráfico Anterior}}
+\end{flushright}
+
+}
+\end{frame}
+
+\begin{frame}[label=links2]
+\frametitle{Links} {\
+\vskip-0.4cm
+Ou talvez queremos mostrar um slide escondido se o público tiver questões sobre algum assunto específico.
+\vskip1cm
+
+\begin{theorem}
+\begin{equation*}
+    1-2+3-4+...=\frac{1}{4}
+\end{equation*}
+\end{theorem}
+
+
+\vskip-0.1cm
+\begin{flushright}
+\hyperlink{appendix1}{\beamerreturnbutton{Prova}}
+\end{flushright}
+
+}
+\end{frame}
+
+\section{Outras Utilidades}
+
+\subsection{Listas}
+
+\begin{frame}[label=lists]
+\frametitle{Listas} {\
+
+\begin{itemize}
+  \item itemize (criar items)
+  \begin{itemize}
+    \item A
+    \item B
+  \end{itemize}
+  \item enumerate (enumerar)
+  \begin{enumerate}
+    \item A
+    \item B
+  \end{enumerate}
+  \item description (descrição)
+  \begin{description}
+    \item[Meu Primeiro Item] A
+    \item[Meu Segundo Item] B
+  \end{description}
+\end{itemize}
+
+
+}
+\end{frame}
+
+\subsection{Overlays}
+
+\begin{frame}[label=overlays]
+\frametitle{Overlays (Sobreposição)} {\
+
+\begin{itemize}
+    \item Comando: \textbackslash{}\emph{pause}
+    \item \hyperlink{appendix4}{Alertas} $\Leftarrow$ clique para explicação
+    \item \hyperlink{appendix5}{Especificações} $\Leftarrow$ clique para explicação
+\end{itemize}
+
+
+}
+\end{frame}
+
+
+\subsection{Estruturas de Slides}
+
+\begin{frame}[label=frames]
+\frametitle{Estruturas de Slides} {\
+
+\begin{itemize}
+    \item \hyperlink{appendix2}{Colunas} $\Leftarrow$ clique para explicação
+    \item \hyperlink{appendix3}{Blocos} $\Leftarrow$ clique para explicação
+\end{itemize}
+
+
+}
+\end{frame}
+
+\subsection{Notas}
+
+\begin{frame}[label=notes]
+\frametitle{Notas} {\
+
+\begin{figure}
+  % Requires \usepackage{graphicx}
+  \includegraphics[width=2.5cm]{market.jpg}\\
+  \caption{Oferta X Demanda}\label{fig:market}
+\end{figure}
+\note[item]<1>{Lembre-se: A função demanda tem inclinação negativa. Duh!}
+
+\begin{itemize}
+    \item Use o comando \textbackslash{}\{show notes\} no cabeçalho e o comando \textbackslash{}note\{O que estiver escrito aqui, só aparece na tela do computador, não no projetor.\} no slide desejado.
+\end{itemize}
+
+
+}
+\end{frame}
+
+
+
+\begin{frame}[label=appendix1, plain]
+\frametitle{Informações Adicionais} {\
+
+\begin{proof}
+Por autoridade, o teorema é verdadeiro.
+\end{proof}
+
+\vskip-0.1cm
+\begin{flushright}
+\hyperlink{links2}{\beamerreturnbutton{Voltar para Apresentação}}
+\end{flushright}
+
+}
+\end{frame}
+
+\begin{frame}[label=appendix2, plain, fragile]
+\frametitle{Colunas} {\
+
+Se você escrever isso:
+\begin{verbatim}
+\begin{columns}
+\column{0.5\textwidth}
+Minha primeira coluna
+\column{0.5\textwidth}
+Minha segunda coluna
+\end{columns}
+\end{verbatim}
+
+Você vai ter:
+
+\begin{columns}
+\column{0.5\textwidth}
+Minha primeira coluna
+\column{0.5\textwidth}
+Minha segunda coluna
+\end{columns}
+
+\vskip1cm
+
+\begin{flushright}
+\hyperlink{frames}{\beamerreturnbutton{Voltar para Apresentação}}
+\end{flushright}
+
+}
+\end{frame}
+
+\begin{frame}[label=appendix3, plain, fragile]
+\frametitle{Blocos} {\
+
+Se você escrever isso:
+\begin{verbatim}
+\begin{block}{Meu Bloco}
+Esta é uma maneira interessante de destacar algo.
+\end{block}
+\end{verbatim}
+
+Vai ter:
+
+\begin{block}{Meu Bloco}
+Esta é uma maneira interessante de destacar algo.
+\end{block}
+
+\vskip1cm
+
+Alguns tipos específicos de blocos são: theorem, proof, corollary, example etc.
+
+\vskip1cm
+\begin{flushright}
+\hyperlink{frames}{\beamerreturnbutton{Voltar para Apresentação}}
+\end{flushright}
+
+}
+\end{frame}
+
+\begin{frame}[label=appendix3b, plain, fragile]\small
+\frametitle{Blocos e Colunas} {\
+
+Você pode combinar ambos os comandos:
+
+\begin{verbatim}
+\begin{columns}
+\begin{column}{2.8cm}
+\begin{block}{Smaller Column 1}Some text here.\end{block}
+\end{column}
+\begin{column}{5.5cm}
+\begin{block}{Bigger Column 2}Maybe something else here.\end{block}
+\end{column}
+\end{columns}
+\end{verbatim}
+
+Vai aparecer:
+
+\begin{columns}
+\begin{column}{3cm}
+\begin{block}{Coluna Pequena 1}Um pouco de texto aqui.\end{block}
+\end{column}
+\begin{column}{5.5cm}
+\begin{block}{Coluna Grande 2}talvez um pouco mais de texto aqui.\end{block}
+\end{column}
+\end{columns}
+
+\vskip1cm
+\begin{flushright}
+\hyperlink{frames}{\beamerreturnbutton{Voltar para Apresentação}}
+\end{flushright}
+
+}
+\end{frame}
+
+
+\begin{frame}[label=appendix4, plain, fragile]
+\frametitle{Alerta o item atual} {\
+
+Se digitar:
+
+\begin{verbatim}
+\begin{itemize}[<+-| alert@+>]
+\item Micro
+\item Macro
+\item Econometrics
+\end{itemize}
+\end{verbatim}
+
+Terá:
+
+\begin{itemize}[<+-| alert@+>]
+\item Micro
+\item Macro
+\item Econometrics
+\end{itemize}
+
+\vskip1cm
+\begin{flushright}
+\hyperlink{overlays}{\beamerreturnbutton{Voltar para Apresentação}}
+\end{flushright}
+
+}
+\end{frame}
+
+\begin{frame}[label=appendix5, plain, fragile]\footnotesize
+\frametitle{Especificação} {\
+
+Se digitar:
+
+\begin{verbatim}
+\begin{itemize}
+\item<1-3> Item A
+\item<2-4> Item B
+\item<3-5> Item C
+\item<4-> Item D
+\item<-4> Item E
+\end{itemize}
+\end{verbatim}
+
+Terá:
+
+\begin{itemize}
+\item<1-3> Item A
+\item<2-4> Item B
+\item<3-5> Item C
+\item<4-> Item D
+\item<-4> Item E
+\end{itemize}
+
+\vskip-2cm
+\begin{flushright}
+\hyperlink{overlays}{\beamerreturnbutton{Voltar para Apresentação}}
+\end{flushright}
+
+}
+\end{frame}
+
+
+
+\end{document}
