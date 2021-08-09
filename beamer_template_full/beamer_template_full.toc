@@ -1,0 +1,14 @@
+\babel@toc {portuguese}{}
+\beamer@sectionintoc {1}{O que \'e Beamer e por que us\'a-lo?}{7}{0}{1}
+\beamer@sectionintoc {2}{Use Beamer em 4 passos}{13}{0}{2}
+\beamer@sectionintoc {3}{Estrutura B\'asica}{14}{0}{3}
+\beamer@sectionintoc {4}{Objetos}{18}{0}{4}
+\beamer@subsectionintoc {4}{1}{Equa\c c\~oes}{18}{0}{4}
+\beamer@subsectionintoc {4}{2}{Gr\'aficos}{20}{0}{4}
+\beamer@subsectionintoc {4}{3}{Tabelas}{23}{0}{4}
+\beamer@subsectionintoc {4}{4}{Links}{24}{0}{4}
+\beamer@sectionintoc {5}{Outras Utilidades}{26}{0}{5}
+\beamer@subsectionintoc {5}{1}{Listas}{26}{0}{5}
+\beamer@subsectionintoc {5}{2}{Overlays}{27}{0}{5}
+\beamer@subsectionintoc {5}{3}{Estruturas de Slides}{28}{0}{5}
+\beamer@subsectionintoc {5}{4}{Notas}{29}{0}{5}

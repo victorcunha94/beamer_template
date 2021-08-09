@@ -1,0 +1,39 @@
+\footnotesize
+\frametitle{Estrutura Básica de arquivo .tex para Beamer} {\
+
+\begin{itemize}
+\item Este é um exemplo da estrutura de um arquivo .tex para uma apresentação em Beamer. (Arquivo ema anexo: beamer\_simples.tex) Se digitar esse conjunto de comandos em um editor de \LaTeX{} e compilar (geralmente o comando ou botão é PDFLaTeX)...
+\end{itemize}
+
+% Eu deveria ter usado o comando verbatim aqui, mas por algum motivo, o comando de iniciar slide estava sendo executado mesmo assim.
+
+\textbackslash{}documentclass\{beamer\}
+\vskip0.2cm
+\textbackslash{}begin\{document\}
+
+\textbackslash{}title\{O Efeito da Renda sobre o Consumo\}
+
+\textbackslash{}author\{A. U. Tor\}
+
+\textbackslash{}date\{Julho 2011\}
+\vskip0.2cm
+\textbackslash{}begin\{frame\}
+
+\textbackslash{}titlepage
+
+\textbackslash{}end\{frame\}
+\vskip0.2cm
+\textbackslash{}begin\{frame\}[label=meuslide1]
+
+\textbackslash{}frametitle\{Meu slide\} \{\textbackslash{}
+\vskip0.2cm
+Meu slide aqui.
+\vskip0.2cm
+\}
+
+\textbackslash{}end\{frame\}
+\vskip0.2cm
+\textbackslash{}end\{document\}
+
+
+}

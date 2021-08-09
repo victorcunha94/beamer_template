@@ -1,0 +1,25 @@
+\frametitle{Blocos} {\
+
+Se você escrever isso:
+\begin{verbatim}
+\begin{block}{Meu Bloco}
+Esta é uma maneira interessante de destacar algo.
+\end{block}
+\end{verbatim}
+
+Vai ter:
+
+\begin{block}{Meu Bloco}
+Esta é uma maneira interessante de destacar algo.
+\end{block}
+
+\vskip1cm
+
+Alguns tipos específicos de blocos são: theorem, proof, corollary, example etc.
+
+\vskip1cm
+\begin{flushright}
+\hyperlink{frames}{\beamerreturnbutton{Voltar para Apresentação}}
+\end{flushright}
+
+}

@@ -1,0 +1,33 @@
+\small
+\frametitle{Blocos e Colunas} {\
+
+Você pode combinar ambos os comandos:
+
+\begin{verbatim}
+\begin{columns}
+\begin{column}{2.8cm}
+\begin{block}{Smaller Column 1}Some text here.\end{block}
+\end{column}
+\begin{column}{5.5cm}
+\begin{block}{Bigger Column 2}Maybe something else here.\end{block}
+\end{column}
+\end{columns}
+\end{verbatim}
+
+Vai aparecer:
+
+\begin{columns}
+\begin{column}{3cm}
+\begin{block}{Coluna Pequena 1}Um pouco de texto aqui.\end{block}
+\end{column}
+\begin{column}{5.5cm}
+\begin{block}{Coluna Grande 2}talvez um pouco mais de texto aqui.\end{block}
+\end{column}
+\end{columns}
+
+\vskip1cm
+\begin{flushright}
+\hyperlink{frames}{\beamerreturnbutton{Voltar para Apresentação}}
+\end{flushright}
+
+}

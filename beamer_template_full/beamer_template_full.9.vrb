@@ -1,0 +1,9 @@
+\frametitle{Estrutura Básica de arquivo .tex para Beamer} {\
+
+\begin{itemize}
+\item Depois tente fazer o mesmo com o arquivo em anexo beamer\_simples2.tex
+\item O próximo passo é usar o arquivo .tex correspondente desta aprsentação como modelo.
+\item Antes disso, pode ser interesante entender melhor os principais objetos usados numa apresentação em Beamer.
+\end{itemize}
+
+}

@@ -1,0 +1,25 @@
+\footnotesize
+\frametitle{Equações} {\
+
+\vskip-0.3cm
+
+\begin{itemize}
+    \item As equações anteriores aparecerão se digitar:
+\end{itemize}
+
+\begin{verbatim}
+\begin{equation}
+    Q =\alpha+\beta P+ \gamma I+\epsilon
+\end{equation}
+
+\begin{equation}
+   1 + 2 + \cdots + n = \frac{n(n + 1)}{2}
+\end{equation}
+\end{verbatim}
+
+\begin{itemize}
+    \item Não se assuste com a quantidade de códigos. A maioria dos editores de \LaTeX{} tem botões que ao serem clicados escrevem o código da letra grega ou notação matemática que precisa.
+    \item Um recurso bastante útil para equções mais complicadas, mas frequentemente utilizadas é a \textcolor[rgb]{0.00,0.50,1.00}{\emph{Wikipedia}}. Ela tem todas a maioria das equações escritas em código de \LaTeX{}. Apenas procure pela fonte geradora da página correpondente.
+\end{itemize}
+
+}

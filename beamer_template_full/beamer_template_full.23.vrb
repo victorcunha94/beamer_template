@@ -1,0 +1,28 @@
+\frametitle{Colunas} {\
+
+Se você escrever isso:
+\begin{verbatim}
+\begin{columns}
+\column{0.5\textwidth}
+Minha primeira coluna
+\column{0.5\textwidth}
+Minha segunda coluna
+\end{columns}
+\end{verbatim}
+
+Você vai ter:
+
+\begin{columns}
+\column{0.5\textwidth}
+Minha primeira coluna
+\column{0.5\textwidth}
+Minha segunda coluna
+\end{columns}
+
+\vskip1cm
+
+\begin{flushright}
+\hyperlink{frames}{\beamerreturnbutton{Voltar para Apresentação}}
+\end{flushright}
+
+}

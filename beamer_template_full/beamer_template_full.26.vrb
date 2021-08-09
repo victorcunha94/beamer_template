@@ -1,0 +1,26 @@
+\frametitle{Alerta o item atual} {\
+
+Se digitar:
+
+\begin{verbatim}
+\begin{itemize}[<+-| alert@+>]
+\item Micro
+\item Macro
+\item Econometrics
+\end{itemize}
+\end{verbatim}
+
+Terá:
+
+\begin{itemize}[<+-| alert@+>]
+\item Micro
+\item Macro
+\item Econometrics
+\end{itemize}
+
+\vskip1cm
+\begin{flushright}
+\hyperlink{overlays}{\beamerreturnbutton{Voltar para Apresentação}}
+\end{flushright}
+
+}
