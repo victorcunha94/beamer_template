@@ -1,2 +1,2 @@
-# beamer_template
+# Beamer templates 
  Projetos de templantes para Beamer 
